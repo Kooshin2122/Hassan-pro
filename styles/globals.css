@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.mainBgColor{
+  background-color: 
+  #0a1131;
+}
+.nav{
+  @apply 
+  flex flex-col items-center cursor-pointer text-white/60
+}  
+
+.active{
+  @apply text-white font-medium
+}
