@@ -18,7 +18,7 @@ function CompletePayment() {
 
     return (
         <div className='w-[100%] h-[100vh] flex  justify-center items-center bg-slate-800/60 fixed top-0'>
-            <div className='w-[35%] h-[30vh] bg-white'>
+            <div className='w-[90%] sm:w-[35%] h-[30vh] bg-white'>
                 <div className='flex justify-between items-center text-2xl bg-green-500 p-3 text-white border-b pb-1 '>
                     <h1>Payment</h1>
                     <VscChromeClose

@@ -13,10 +13,12 @@ function DetailsPage({ allServices }) {
 
     const services = useMemo(() => {
         return allServices?.filter((data) => {
-            return data.id == id;
+            return data.services.id == id;
         })
     })
-    const detail = services[0].details ? services[0].details : [0];
+ 
+
+    console.log('services', services);
 
     return (
         <div className='w-[100%] h-fit min-h-[100vh] bg-gray-50 text-slate-700'>
@@ -26,12 +28,12 @@ function DetailsPage({ allServices }) {
                     cartToggle && <Cart />
                 }
             </section>
-            <section className='w-[70%] sm:w-[85%] m-auto py-10 pb-28'>
+            <section className='w-[90%] sm:w-[85%] m-auto py-10 pb-28'>
                 <h1 className='text-2xl sm:text-3xl mb-8'>{label}</h1>
 
                 <div className='grid grid-cols-1 sm:grid-cols-3 gap-10'>
                     {
-                        detail.map((value, index) => {
+                        services.map((value, index) => {
                             return (
                                 <DetailsCard {...value} key={index} />
                             )
@@ -46,7 +48,7 @@ function DetailsPage({ allServices }) {
 
 export async function getServerSideProps() {
     let data;
-    const response = await apiRequest.get('/services')
+    const response = await apiRequest.get('/parternship')
         .catch(error => console.log('error ayaa dhacay', error))
     if (response) {
         data = response.data

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useCustomHook } from '../../service/Context';
 
 function DetailsCard({ id, image, label, description, price, isInCart }) {
-    const [cartCheck, setCartCheck] = useState(isInCart)
+    const [cartCheck, setCartCheck] = useState(false)
 
     const cart = {
         id,

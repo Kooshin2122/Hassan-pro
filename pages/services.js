@@ -17,7 +17,7 @@ function Services({ services }) {
                 {signUpToggle && <SignUpForm />}
                 {loginToggle && <LoginForm />}
             </section>
-            <section className='w-[70%] sm:w-[85%] overflow-auto m-auto py-14 pb-28'>
+            <section className='w-[90%] sm:w-[85%] overflow-auto m-auto py-14 pb-28'>
                 <h1 className='text-3xl font-normal text-center mb-10'>Services</h1>
                 <div className='overflow-auto grid grid-cols-1 sm:grid-cols-3 gap-10'>
                     {

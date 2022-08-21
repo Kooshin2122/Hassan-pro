@@ -12,7 +12,7 @@ import { useCustomHook } from '../service/Context';
 
 function PaymentPage() {
     const { cartToggle, loginToggle, signUpToggle,
-        cartTotal, order, user, cartData, completePayment, showOrHideCompletePayment } = useCustomHook();
+        cartTotal, order, user, cartData, completePayment, showOrHideCompletePayment, showOrHideLoginForm } = useCustomHook();
 
     const postNewTask = async (endPoint, newTask) => {
         await apiRequest.post(`${endPoint}`, newTask)
@@ -21,7 +21,9 @@ function PaymentPage() {
 
     const paymentCompleted = () => {
 
-        if (cartTotal) {
+        if (!user.companyName) showOrHideLoginForm()
+
+        if (cartTotal && user.companyName) {
             showOrHideCompletePayment()
             const productList = []
             cartData?.map((item) => {
@@ -52,8 +54,8 @@ function PaymentPage() {
                 {loginToggle && <LoginForm />}
             </section>
 
-            <section className='h-[100vh] flex justify-between items-center bg-gray-50'>
-                <div className='w-[40%] h-full p-5 bg-gray-50 text-center'>
+            <section className='h-[100vh] flex  flex-wrap justify-between gap-y-9 items-center bg-gray-50'>
+                <div className='w-[100%] sm:w-[40%] h-fit sm:h-full p-5 bg-gray-200 text-center'>
                     <h1 className='text-3xl'>
                         ORDERS LISTS
                     </h1>
@@ -68,8 +70,8 @@ function PaymentPage() {
 
                     </div>
                 </div>
-                <div className='w-[60%] h-full bg-white flex justify-center items-center'>
-                    <div className='w-[45%] min-h-[55vh] mainBgColor text-white p-10 text-center rounded-md'>
+                <div className='w-[100%] sm:w-[60%] sm:h-full bg-white flex justify-center items-center'>
+                    <div className='w-[90%] mb-24 sm:w-[45%] min-h-[55vh] mainBgColor text-white p-10 text-center rounded-md'>
                         <h1 className='text-3xl'>REGISTER ORDERS</h1>
                         <p className='mt-14'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit.

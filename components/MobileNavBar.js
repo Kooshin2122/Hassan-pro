@@ -25,15 +25,9 @@ function MobileNavBar() {
                 </span>
             </Link>
 
-            <Link href='/paternship'>
-                <span className={`${router.pathname == '/paternship' ? 'active' : ''} nav group`}>
-                    <AiOutlineTeam className='text-2xl group-hover:animate-bounce' />
-                    <h1 className='group-active:scale-110'>Paternship</h1>
-                </span>
-            </Link>
 
-            <Link href='/about'>
-                <span className={`${router.pathname == '/about' ? 'active' : ''} nav group`}>
+            <Link href='/account'>
+                <span className={`${router.pathname == '/account' ? 'active' : ''} nav group`}>
                     <AiOutlineUser className='text-xl group-hover:animate-bounce' />
                     <h1 className='group-active:scale-110'>Account</h1>
                 </span>

@@ -11,8 +11,7 @@ import { Avatar } from '@mui/material';
 
 
 function Header() {
-    const { showOrHideCart, cartData, user, showOrHideLoginForm } = useCustomHook()
-    const [userIcon, setUserIcon] = useState(user.companyName)
+    const { showOrHideCart, cartData, user, showOrHideLoginForm, userIcon, setUserIcon } = useCustomHook()
     const userLogin = () => {
         showOrHideLoginForm()
     }
@@ -31,7 +30,7 @@ function Header() {
                 <h1
                     onClick={showOrHideCart}
                     className='text-2xl font-semibold cursor-pointer rounded-full shadow-2xl' >
-                    <p className='text-sm px-1 rounded-full text-white bg-slate-800 absolute right-[14%] sm:right-[6%] top-2 sm:top-4'>
+                    <p className='text-sm px-1 rounded-full text-white bg-slate-800 absolute right-[21%] sm:right-[6%] top-2 sm:top-4'>
                         {cartData.length}
                     </p>
                     <BsCartPlus />

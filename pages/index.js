@@ -37,13 +37,7 @@ export default function Home({ services }) {
 
       <section className='w-[90%] m-auto mb-5 h-fit flex flex-col items-center'>
         <h1 className='text-3xl font-normal text-center mb-5'>Testmonial</h1>
-        <div className='flex gap-x-5 items-center w-[100%]'>
-          <TestimonialCard
-            name={"John Smith"}
-            image={"profile.jpeg"}
-            content={"Wow! This testimonial card is so amazing! I would like to use it in my project! Wow! This testimonial card is so amazing! I would like to use it in my project! Wow! This testimonial card is so amazing! I would like to use it in my project!"}
-            project={"Testimonial card"}
-          />
+        <div className='flex justify-center sm:justify-between items-center flex-wrap w-[100%]'>
           <TestimonialCard
             name={"John Smith"}
             image={"profile.jpeg"}

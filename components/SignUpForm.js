@@ -7,7 +7,7 @@ import RegularBtn from './RegularBtn'
 import RegularField from './RegularFields'
 
 function SignUpForm() {
-    const { showOrHideSignUpForm, showOrHideLoginForm, setUser } = useCustomHook()
+    const { showOrHideSignUpForm, showOrHideLoginForm, setUser, setUserIcon } = useCustomHook()
 
     const postNewTask = async (endPoint, newTask) => {
         await apiRequest.post(`${endPoint}`, newTask)
@@ -25,6 +25,7 @@ function SignUpForm() {
         }
         postNewTask('/users', signUpInfo)
         setUser(signUpInfo)
+        setUserIcon(signUpInfo.companyName)
         showOrHideSignUpForm()
     }
 

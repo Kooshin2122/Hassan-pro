@@ -7,7 +7,7 @@ import RegularBtn from './RegularBtn'
 import RegularField from './RegularFields'
 
 function LoginForm() {
-    const { showOrHideLoginForm, showOrHideSignUpForm, setUser, user } = useCustomHook()
+    const { showOrHideLoginForm, showOrHideSignUpForm, setUser, user, userIcon, setUserIcon } = useCustomHook()
     const [loginResponse, setLoginResponse] = useState(false)
 
     const getAllUsers = async (endPoint) => {
@@ -31,6 +31,7 @@ function LoginForm() {
                 setUser(data)
                 setLoginResponse(false)
                 showOrHideLoginForm()
+                setUserIcon(data.companyName)
             }
             else setLoginResponse(true)
         })

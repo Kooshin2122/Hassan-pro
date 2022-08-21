@@ -3,13 +3,16 @@ import React, { createContext, useContext, useState } from 'react'
 const Context = createContext()
 
 function ContextApi({ children }) {
-
+    const [cartCheck, setCartCheck] = useState(false)
     // used Components --> Header.js,User.js
     // used Pages      --> home page
     const [userToggle, setUserToggle] = useState(false)
     const showOrHideUser = () => {
         setUserToggle(!userToggle)
     }
+
+    const [userIcon, setUserIcon] = useState('')
+
 
     // used Components --> LoginForm.js & SignUpForm.js
     // used Pages      --> home page
@@ -45,6 +48,8 @@ function ContextApi({ children }) {
     return (
         <Context.Provider
             value={{
+                cartCheck, setCartCheck,
+                userIcon, setUserIcon,
                 userToggle, setUserToggle, showOrHideUser,
                 loginToggle, setLoginToggle, showOrHideLoginForm,
                 signUpToggle, setSignUpToggle, showOrHideSignUpForm,
